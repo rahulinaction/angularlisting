@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import {environment} from '../../environments/environment';
+import {ApiService} from '../api.service';
+import {Todo} from '../models/todo';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,14 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   clickCounter: number = 0;
+  getList: any;
+  todos: Todo[];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private api: ApiService) {
   }
 
-  countClick() {
-    this.clickCounter += 1;
+  ngOnInit(): void {
+    this.api.getTodos().subscribe(todoItems => {
+      this.todos  = todoItems;
+    });
   }
 
 }
