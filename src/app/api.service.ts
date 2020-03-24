@@ -28,10 +28,6 @@ export class ApiService {
     return this.http.get(environment.baseURL, this.getHeaders());
   }
 
-  public getRecipePuppy() {
-    return this.http.get(environment.recipeURL);
-  }
-
   public getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${environment.todoUrl}${environment.todoLimit}`);
   }
