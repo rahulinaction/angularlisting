@@ -22,6 +22,5 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-The purpose of this project is to handle state management for sample angular 8 application
+The idea is to setup an angular listing application along with reactive flavour using ngrx
