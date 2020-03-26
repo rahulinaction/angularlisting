@@ -8,12 +8,14 @@ import { ListComponent } from './list/list.component';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import {ApiService} from './api.service';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    TodoItemComponent
   ],
   imports: [
     BrowserModule,

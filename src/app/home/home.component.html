@@ -1,9 +1,8 @@
 <div>
 <div class="play-container">
+    
     <ul *ngFor="let todo of todos" class="todo-list">
-        <li>
-            <p>{{todo.title}}</p>
-        </li>    
+        <app-todo-item [todo]="todo"></app-todo-item>  
     </ul>    
 </div>    
 </div>
