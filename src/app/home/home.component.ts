@@ -8,7 +8,6 @@ import {Todo} from '../models/todo';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  clickCounter: number = 0;
   getList: any;
   todos: Todo[];
 

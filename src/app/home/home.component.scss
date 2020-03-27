@@ -1,7 +1,8 @@
 .todo-list {
     list-style-type: none;
     padding: 0px 10px;
-
+    max-width:500px;
+    margin: 0 auto;
     li {
         padding: 10px 0px;
         border: 1px solid red;
