@@ -19,6 +19,9 @@ export class ToDoEffects {
         this.apiService.getTodos().pipe(
           map((data: Todo[]) => {
             return ToDoActions.loadTodosSuccess({ data });
+          }),
+          catchError((error: Error) => {
+            return of(ToDoActions.loadTodosFailure(error));
           })
         )
       )
