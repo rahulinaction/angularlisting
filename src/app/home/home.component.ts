@@ -12,9 +12,17 @@ export class HomeComponent implements OnInit {
   todos: Todo[];
 
   constructor(private api: ApiService) {
+    this.todos = [];
   }
 
   ngOnInit(): void {
+    setTimeout(() => {    
+      this.fetchTodos();
+    }, 3000);
+  }
+
+
+  fetchTodos() {
     this.api.getTodos().subscribe(todoItems => {
       this.todos  = todoItems;
     });

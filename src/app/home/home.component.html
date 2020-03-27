@@ -1,7 +1,12 @@
-<div class="play-container">
+<div class="play-container" *ngIf="todos.length > 0; else elseBlock">
     <ul class="todo-list">
         <ng-container *ngFor="let todo of todos" >
             <app-todo-item [todo]="todo"></app-todo-item>  
         </ng-container>
     </ul>      
 </div> 
+<ng-template #elseBlock>
+    <div class="loading-indicator">
+        <mat-spinner></mat-spinner>
+    </div>   
+</ng-template>   
