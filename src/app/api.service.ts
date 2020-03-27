@@ -28,6 +28,11 @@ export class ApiService {
     return this.http.get(environment.baseURL, this.getHeaders());
   }
 
+  getRandomUsers(){
+    let results = 15;
+    return this.http.get(environment.usersUrl + results + '&page=1');
+  }
+
   public getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${environment.todoUrl}${environment.todoLimit}`);
   }

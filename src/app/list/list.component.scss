@@ -1,0 +1,8 @@
+.list-container {
+    display: flex;
+    max-width: 750px;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
