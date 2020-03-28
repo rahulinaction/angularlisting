@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {environment} from '../../environments/environment';
 import {ApiService} from '../api.service';
 import { Observable, Subscription } from 'rxjs';
-
 import { map, catchError, mergeMap } from 'rxjs/operators';
 import { select, Store } from '@ngrx/store';
 import {Todo} from '../models/todo';
@@ -15,7 +14,6 @@ import ToDoState from '../state/todo.state';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  getList: any;
   todos: Todo[];
   todoError: Error = null;
   todo$: Observable<ToDoState>;

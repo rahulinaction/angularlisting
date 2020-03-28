@@ -4,24 +4,24 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import {ApiService} from '../api.service';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import * as ToDoActions from '../actions/todo.actions';
+import * as UserActions from '../actions/user.actions';
+import {User} from '../models/user';
 
-import {Todo} from '../models/todo';
 
 @Injectable()
-export class ToDoEffects {
+export class UserEffects {
   constructor(private apiService: ApiService, private action$: Actions) {}
 
-  GetToDos$: Observable<Action> = createEffect(() =>
+  GetUsers$: Observable<Action> = createEffect(() =>
     this.action$.pipe(
-      ofType(ToDoActions.loadTodos),
+      ofType(UserActions.loadUsers),
       mergeMap(action =>
-        this.apiService.getTodos().pipe(
-          map((data: Todo[]) => {
-            return ToDoActions.loadTodosSuccess({ data });
+        this.apiService.getRandomUsers().pipe(
+          map((data: User[]) => {
+            return UserActions.loadUsersSuccess({ data: data['results'] });
           }),
           catchError((error: Error) => {
-            return of(ToDoActions.loadTodosFailure(error));
+            return of(UserActions.loadUsersFailure(error));
           })
         )
 

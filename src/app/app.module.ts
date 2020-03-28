@@ -14,7 +14,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
-import {ToDoEffects} from './effects/todo.effects';
+import { ToDoEffects } from './effects/todo.effects';
+import { UserEffects } from './effects/user.effects';
 import { EffectsModule } from '@ngrx/effects';
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { EffectsModule } from '@ngrx/effects';
     HttpClientModule,
     MatProgressSpinnerModule,
    // AngularMaterialModule,
-    EffectsModule.forRoot([ToDoEffects]),
+    EffectsModule.forRoot([ToDoEffects, UserEffects]),
     StoreModule.forRoot(reducers, {
       metaReducers, 
       runtimeChecks: {
