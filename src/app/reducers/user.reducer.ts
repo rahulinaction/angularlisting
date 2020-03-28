@@ -8,8 +8,8 @@ const initialState = initializeUserState();
 const reducer = createReducer(
   initialState,
   on(UserActions.loadUsers, state => state),
-  on(UserActions.loadUsersSuccess, (state: UserState, { data }) => {
-    return { ...state, Users: data, UserError: null };
+  on(UserActions.loadUsersSuccess, (state: UserState, { data, page }) => {
+    return { ...state, Users: state.Users.concat(data), page: page + 1 , UserError: null };
   }),
   on(UserActions.loadUsersFailure, (state: UserState, error: Error) => {
     // remove below line and use different telemetry logging

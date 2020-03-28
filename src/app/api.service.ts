@@ -28,9 +28,9 @@ export class ApiService {
     return this.http.get(environment.baseURL, this.getHeaders());
   }
 
-  getRandomUsers(){
+  getRandomUsers(page: number){
     let results = 15;
-    return this.http.get(environment.usersUrl + results + '&page=1');
+    return this.http.get(environment.usersUrl + results + '&page=' + page);
   }
 
   public getTodos(): Observable<Todo[]> {

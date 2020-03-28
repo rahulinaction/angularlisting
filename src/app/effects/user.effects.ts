@@ -16,9 +16,10 @@ export class UserEffects {
     this.action$.pipe(
       ofType(UserActions.loadUsers),
       mergeMap(action =>
-        this.apiService.getRandomUsers().pipe(
+
+        this.apiService.getRandomUsers(action.page).pipe(
           map((data: User[]) => {
-            return UserActions.loadUsersSuccess({ data: data['results'] });
+            return UserActions.loadUsersSuccess({ data: data['results'], page: data['info']['page'] });
           }),
           catchError((error: Error) => {
             return of(UserActions.loadUsersFailure(error));
