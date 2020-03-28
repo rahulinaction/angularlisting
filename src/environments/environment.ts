@@ -7,6 +7,8 @@ export const environment = {
   baseURL: 'https://api.yelp.com/v3/businesses',
   todoUrl: 'http://jsonplaceholder.typicode.com/todos',
   todoLimit: '?_limit=15',
+  pageLimit: 3,
+  initialPage: 1,
   usersUrl: 'https://randomuser.me/api?results=',
   // tslint:disable-next-line: max-line-length
   headers: 'Bearer i-OGw1skw1sXrNvAek1BlDtKHNUaEQI194u11NnGvOR0BE7IDRG2NWwkgbfgYVoVqfsSvb3pp1Xdjv6Oy16b344Z5YKbYutPqpbpqq04_J9dRG749T1IUB5i2ohpXXYx'
