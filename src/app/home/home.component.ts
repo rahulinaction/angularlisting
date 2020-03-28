@@ -33,7 +33,9 @@ export class HomeComponent implements OnInit {
       })
     )
     .subscribe();
-    this.store.dispatch(ToDoActions.loadTodos());
+    setTimeout(() => {
+      this.store.dispatch(ToDoActions.loadTodos());
+    }, 3000);
   }
 
 
